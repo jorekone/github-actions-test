@@ -9,6 +9,12 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
         run: echo "$GITHUB_CONTEXT"
+      - name: My context
+        env:
+          JORGE_CONTEXT: ${{ toJSON(github.event.commits.author.email)}}
+        run: |
+          echo "$JORGE_CONTEXT"
+          echo "${{github.actor}}"
       - name: Dump job context
         env:
           JOB_CONTEXT: ${{ toJSON(job) }}
