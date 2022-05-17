@@ -1,0 +1,14 @@
+{
+  "name": "@caraguevo",
+  "version": "3.22.0",
+  "main": "./src/index.ts",
+  "license": "UNLICENSED",
+  "private": true,
+  "description": "API Service for reporting",
+  "scripts": {
+    "compile": "beamery-iceberg-cli webpack -c ../../webpack.node.config.js",
+    "test": "NODE_ENV=test yarn beamery-iceberg-cli jest -c ../../jest.config.js",
+    "test:e2e": "cypress run --reporter dot --config-file=\"../../cypress.json\"",
+    "test:e2e:open": "cypress open -C ../../cypress.json"
+  }
+}

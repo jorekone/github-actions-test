@@ -1,0 +1,20 @@
+name: JQ worflow
+
+on: [push]
+
+jobs:
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: List Files
+        run: |
+          pwd
+          ls -a
+      - name: Print scripts in package.json
+        run: |
+          jq .scripts src/package.json
+      - name: Print with CAT package.json
+        run: |
+          cat src/package.json | jq '.scripts | has("test:e2e")'
